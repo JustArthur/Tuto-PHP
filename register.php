@@ -1,3 +1,20 @@
+<?php
+    require_once('include.php');
+
+    if(isset($_SESSION['utilisateur'][0])) {
+        header('Location: pages/panel');
+        exit;
+    }
+
+    if(!empty($_POST)) {
+        extract($_POST);
+
+        if(isset($_POST['inscription'])) {
+            [$erreur] = $_INSCRIPTION->inscription_utilisateur($identifiant, $email, $password, $new_password, $conf_password);
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,7 +40,7 @@
 
             <input type="email" class="" name="email" maxlength="32" placeholder="Adresse mail">
 
-            <input type="password" class="" name="new-password" maxlength="32" placeholder="Mot de passe">
+            <input type="password" class="" name="new_password" maxlength="32" placeholder="Mot de passe">
 
             <input type="password" class="" name="conf_password" maxlength="32" placeholder="Confirmer le mot de passe">
 

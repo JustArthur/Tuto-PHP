@@ -139,11 +139,11 @@ form input[type='email'] {
     border-bottom: none;
 }
 
-form input[type='password']:not(input[name='new-password']) {
+form input[type='password']:not(input[name='new_password']) {
     border-radius: 0 0 10px 10px;
 }
 
-form input[name="new-password"] {
+form input[name="new_password"] {
     border-bottom: none;
 }
 

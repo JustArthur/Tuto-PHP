@@ -3,8 +3,8 @@
   class connexionDB {
 
     private $host    = 'localhost';
-    private $name    = '';
-    private $user    = '';
+    private $name    = 'Tuto_PHP';
+    private $user    = 'root';
     private $pass    = '';
     private $connexion;
 
