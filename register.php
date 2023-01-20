@@ -19,15 +19,15 @@
             <!-- <div class="text-erreur">Ceci est une erreur</div>
             <div class="text-success">Ceci est un success</div> -->
 
-            <input type="text" class="" name="identifiant" placeholder="Identifiant">
+            <input type="text" class="" name="identifiant" maxlength="20" placeholder="Identifiant">
 
-            <input type="email" class="" name="email" placeholder="Adresse mail">
+            <input type="email" class="" name="email" maxlength="32" placeholder="Adresse mail">
 
-            <input type="password" class="" name="new-password" placeholder="Mot de passe">
+            <input type="password" class="" name="new-password" maxlength="32" placeholder="Mot de passe">
 
-            <input type="password" class="" name="conf_password" placeholder="Confirmer le mot de passe">
+            <input type="password" class="" name="conf_password" maxlength="32" placeholder="Confirmer le mot de passe">
 
-            <button type="submit" name="inscription">S'inscrice</button>
+            <button type="submit" name="inscription">S'inscrire</button>
 
         </form>
 

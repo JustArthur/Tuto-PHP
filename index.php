@@ -1,10 +1,3 @@
-<?php
-    $valid = true;
-
-    $array = array('test', 'etst');
-
-    echo $array;
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,9 +19,9 @@
             <!-- <div class="text erreur">Ceci est une erreur</div>
             <div class="text success">Ceci est un success</div> -->
 
-            <input type="text" class="" name="identifiant" placeholder="Identifiant">
+            <input type="text" class="" name="identifiant" maxlength="20" placeholder="Identifiant">
 
-            <input type="password" class="" name="password" placeholder="Mot de passe">
+            <input type="password" class="" name="password" maxlength="32" placeholder="Mot de passe">
 
             <button type="submit" name="connexion">Se connecter</button>
 
