@@ -14,8 +14,6 @@
     --c-background: #e8eff0;
 
     --c-bleu: #0f51df;
-    --c-bleu-opa: ;
-
     --c-bleu-clair: #9EB9EA;
 
     --c-rouge: #e92020;
@@ -25,7 +23,9 @@
     --c-vert-opa: #0e9e0930;
 
     --c-noir: #1a1a1a;
+
     --c-blanc: #FFFFFF;
+    
     --c-gris: #c9c9c9;
 
     --box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
