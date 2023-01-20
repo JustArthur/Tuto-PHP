@@ -16,7 +16,7 @@
         <ul class="list">
             <a href="#">Accueil</a>
             <a href="#">Voir les utilisateurs</a>
-            <a href="#">Se déconnecter</a>
+            <a href="deconnexion.php">Se déconnecter</a>
         </ul>
     </nav>
 </body>

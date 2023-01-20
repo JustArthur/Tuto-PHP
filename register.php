@@ -6,11 +6,14 @@
         exit;
     }
 
+    $erreur_password = '';
+    $erreur_identifiant = '';
+
     if(!empty($_POST)) {
         extract($_POST);
 
         if(isset($_POST['inscription'])) {
-            [$erreur] = $_INSCRIPTION->inscription_utilisateur($identifiant, $email, $new_password, $conf_password);
+            [$text_erreur, $erreur_password, $erreur_identifiant, $class_erreur] = $_INSCRIPTION->inscription_utilisateur($identifiant, $email, $new_password, $conf_password);
         }
     }
 ?>
@@ -33,17 +36,17 @@
 
         <form method="POST">
 
-            <?php if(isset($erreur)) { ?>
-                <div class="text-<?= $erreur[0] ?>"><?= $erreur[1] ?></div>
+            <?php if(isset($text_erreur)) { ?>
+                <div class="text <?= $class_erreur ?>"><?= $text_erreur ?></div>
             <?php } ?>
 
-            <input type="text" class="" name="identifiant" maxlength="20" placeholder="Identifiant">
+            <input type="text" class="<?= $erreur_identifiant ?>" name="identifiant" maxlength="20" placeholder="Identifiant">
 
-            <input type="email" class="" name="email" maxlength="32" placeholder="Adresse mail">
+            <input type="email" name="email" maxlength="32" placeholder="Adresse mail">
 
-            <input type="password" class="" name="new_password" maxlength="32" placeholder="Mot de passe">
+            <input type="password" class="<?= $erreur_password ?>" name="new_password" maxlength="32" placeholder="Mot de passe">
 
-            <input type="password" class="" name="conf_password" maxlength="32" placeholder="Confirmer le mot de passe">
+            <input type="password" class="<?= $erreur_password ?>" name="conf_password" maxlength="32" placeholder="Confirmer le mot de passe">
 
             <button type="submit" name="inscription">S'inscrire</button>
 

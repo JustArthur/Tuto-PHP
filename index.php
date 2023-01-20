@@ -1,3 +1,23 @@
+<?php
+    require_once('include.php');
+
+    if(isset($_SESSION['utilisateur'][0])) {
+        header('Location: pages/panel');
+        exit;
+    }
+
+    $erreur_password = '';
+    $erreur_identifiant = '';
+
+    if(!empty($_POST)) {
+        extract($_POST);
+
+        if(isset($_POST['connexion'])) {
+            [$text_erreur, $erreur_password, $erreur_identifiant, $class_erreur] = $_CONNEXION->connexion_utilisateur($identifiant, $password);
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,12 +36,13 @@
 
         <form method="POST">
 
-            <!-- <div class="text erreur">Ceci est une erreur</div>
-            <div class="text success">Ceci est un success</div> -->
+            <?php if(isset($text_erreur)) { ?>
+                <div class="text <?= $class_erreur ?>"><?= $text_erreur ?></div>
+            <?php } ?>
 
-            <input type="text" class="" name="identifiant" maxlength="20" placeholder="Identifiant">
+            <input type="text" class="<?= $erreur_identifiant ?>" name="identifiant" maxlength="20" placeholder="Identifiant">
 
-            <input type="password" class="" name="password" maxlength="32" placeholder="Mot de passe">
+            <input type="password" class="<?= $erreur_password ?>" name="password" maxlength="32" placeholder="Mot de passe">
 
             <button type="submit" name="connexion">Se connecter</button>
 

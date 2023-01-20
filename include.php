@@ -7,7 +7,9 @@
 
     //Fichiers pour l'import des class
     include_once('php/class/inscriptionClass.php');
+    include_once('php/class/connexionClass.php');
 
     //Appel des class
     $_INSCRIPTION = new Inscription;
+    $_CONNEXION = new Connexion;
 ?>
