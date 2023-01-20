@@ -10,7 +10,7 @@
         extract($_POST);
 
         if(isset($_POST['inscription'])) {
-            [$erreur] = $_INSCRIPTION->inscription_utilisateur($identifiant, $email, $password, $new_password, $conf_password);
+            [$erreur] = $_INSCRIPTION->inscription_utilisateur($identifiant, $email, $new_password, $conf_password);
         }
     }
 ?>
@@ -33,8 +33,9 @@
 
         <form method="POST">
 
-            <!-- <div class="text-erreur">Ceci est une erreur</div>
-            <div class="text-success">Ceci est un success</div> -->
+            <?php if(isset($erreur)) { ?>
+                <div class="text-<?= $erreur[0] ?>"><?= $erreur[1] ?></div>
+            <?php } ?>
 
             <input type="text" class="" name="identifiant" maxlength="20" placeholder="Identifiant">
 
