@@ -14,8 +14,16 @@
     --c-background: #e8eff0;
 
     --c-bleu: #0f51df;
+    --c-bleu-opa: ;
+
+    --c-bleu-clair: #9EB9EA;
+
     --c-rouge: #e92020;
+    --c-rouge-opa: #e9202030;
+
     --c-vert: #0e9e09;
+    --c-vert-opa: #0e9e0930;
+
     --c-noir: #1a1a1a;
     --c-blanc: #FFFFFF;
     --c-gris: #c9c9c9;
@@ -41,7 +49,7 @@ body {
     width: 800px;
     height: 800px;
     border-radius: 50%;
-    background-color: #9EB9EA;
+    background-color: var(--c-bleu-clair);
     z-index: -1;
 }
 
@@ -52,7 +60,7 @@ body {
     width: 800px;
     height: 800px;
     border-radius: 50%;
-    background-color: #9EB9EA;
+    background-color: var(--c-bleu-clair);
     z-index: -1;
 }
 
@@ -96,12 +104,12 @@ form .text {
 }
 
 form div.erreur {
-    background-color: #e9202030;
+    background-color: var(--c-rouge-opa);
     border: 1px solid var(--c-rouge);
 }
 
 form div.success {
-    background-color: #0e9e0930;
+    background-color: var(--c-vert-opa);
     border: 1px solid var(--c-vert);
 }
 

@@ -1,3 +1,10 @@
+<?php
+    $valid = true;
+
+    $array = array('test', 'etst');
+
+    echo $array;
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
